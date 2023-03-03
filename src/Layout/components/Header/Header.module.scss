@@ -17,9 +17,11 @@
 .logo{
 
 }
+.search,.search-result{
+  width: 362px;
+}
 .search{
   position: relative;
-  width: 362px;
   height: var(--search-height);
   display:flex;
   justify-content:space-between;
@@ -55,6 +57,13 @@
     input:not(:placeholder-shown) ~.search-btn {
       color: #333;
     }
+   
+}
+.search-title{
+  font-size: 1.4rem;
+  padding: 4px 12px;
+  font-size: 500;
+  color: rgba(22,24,35,0.5);
 }
 .clear,.loading{
   position:absolute;
