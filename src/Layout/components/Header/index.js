@@ -54,8 +54,7 @@ export default function Header() {
         </Tippy>
         <div className={cx("actions")}>
           <Button text onClick={()=>{alert('Click')}}>Upload</Button>
-          <Button primary disabled onClick={()=>{alert('Click')}}>Log In</Button>
-          <Button outline lefticon={<FontAwesomeIcon icon={faMagnifyingGlass} />} rounded onClick={()=>{alert('Click')}}>Upload</Button>
+          <Button primary onClick={()=>{alert('Click')}}>Log In</Button>
         </div>
       </div>
     </header>
