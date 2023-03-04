@@ -5,6 +5,9 @@ import {
   faCircleXmark,
   faSpinner,
   faMagnifyingGlass,
+  faEllipsisVertical,
+  faEarthAsia,
+  faKeyboard,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { Wrapper as PopperWraper } from "~/Layout/Proper";
@@ -13,7 +16,24 @@ import styles from "./Header.module.scss";
 import images from "~/asset/images";
 import AccountItem from "../AccountItem";
 import Button from "../Button";
+import Menu from "~/Layout/Proper/Menu/Menu";
 const cx = classNames.bind(styles);
+const MENU_ITEMS = [
+  {
+    icon: <FontAwesomeIcon icon={faEarthAsia}></FontAwesomeIcon>,
+    title: "English",
+  },
+  {
+    icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
+    title: "Feed Back and House",
+    to: "/feedback",
+  },
+  {
+    icon: <FontAwesomeIcon icon={faSpinner}></FontAwesomeIcon>,
+    title: "KeyBoard Shortcut",
+    href: "/home",
+  },
+];
 export default function Header() {
   const [searchResult, setSearchResult] = useState([1, 2, 3]);
 
@@ -25,20 +45,19 @@ export default function Header() {
         </div>
 
         <Tippy
-          interactive="true"
-          visible="true"
+        interactive
+        
           render={(result) => (
             <div className={cx("search-result")} tabIndex="-1" {...result}>
-                <PopperWraper>
-                 <h4 className={cx("search-title")}>Search Account</h4>
-                     <AccountItem />
-                     <AccountItem />
-                     <AccountItem />
-                     <AccountItem />
-                     <AccountItem />
-
-                </PopperWraper>
-              </div>
+              <PopperWraper>
+                <h4 className={cx("search-title")}>Search Account</h4>
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+              </PopperWraper>
+            </div>
           )}
         >
           <div className={cx("search")}>
@@ -53,8 +72,14 @@ export default function Header() {
           </div>
         </Tippy>
         <div className={cx("actions")}>
-          <Button text onClick={()=>{alert('Click')}}>Upload</Button>
-          <Button primary onClick={()=>{alert('Click')}}>Log In</Button>
+          <Button text>Upload</Button>
+          <Button primary>Log In</Button>
+
+          <Menu items={MENU_ITEMS}>
+            <button className={cx("more-btn")}>
+              <FontAwesomeIcon icon={faEllipsisVertical} />
+            </button>
+          </Menu>
         </div>
       </div>
     </header>

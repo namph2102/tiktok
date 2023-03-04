@@ -1,0 +1,16 @@
+.menu__items{
+    width: 224px;
+    button{
+        margin-left: 0 !important;
+        padding: 18px 12px;
+        gap:12px;
+        width: 100%;
+        border-radius: 0;
+        a{
+            font-weight: 500;
+        }
+        &:hover{
+            background-color: #a5a2a2;
+        }
+    }
+}
